@@ -1,5 +1,5 @@
 <h1 align="center"> 
-   AsunaRobot 
+  🌟AsunaRobot🌟 
 </h1>
 
 <h3 align="center"> 
@@ -128,7 +128,7 @@ async def some_function(_, message):
 Special Credits ❤️
 </h2>
 <p>
-💡 <a href="https://github.com/thehamkercat"> The Hamcker Cat </a>
+💡 <a href="https://github.com/thehamkercat"> The Hamcker Cat </a><br>
 💡 <a href="https://github.com/DevsExpo"> Friday Userbot </a>
 </p>
 
