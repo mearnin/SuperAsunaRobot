@@ -24,8 +24,8 @@ from pyrogram import filters
 
 
 
-_MODULE_ = "Cricket"
-_HELP_ = """
+__MODULE__ = "Cricket"
+__HELP__ = """
 To get the live cricket livescores haha
 /cs
 Will automatically give you latest cricket information."""
