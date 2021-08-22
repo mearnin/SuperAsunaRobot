@@ -6,8 +6,10 @@ from pyrogram import filters
 
 
 _MODULE_ = "Cricket"
-_HELP_ = """To get the live cricket livescores
-haha"""
+_HELP_ = """
+To get the live cricket livescores haha
+/cs
+Will automatically give you latest cricket information."""
 
 
 @app.on_message(filters.command("cs"))
