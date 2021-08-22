@@ -5,8 +5,8 @@ import bs4
 import aiohttp
 import requests
 
-_MODULE_ = "Apps"
-_HELP_ = """To search an app on playstore"""
+__MODULE__ = "Apps"
+__HELP__ = """To search an app on playstore"""
     
     
 @app.on_message(filters.command("ply"))
