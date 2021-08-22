@@ -1,9 +1,9 @@
 <h1 align="center"> 
-    ✨ WilliamButcherBot ✨ 
+    ❤️Asena Robot❤️ 
 </h1>
 
 <h3 align="center"> 
-    Telegram Group Manager Bot + Userbot Written In Python Using Pyrogram.
+    Telegram Group Manager Bot Written In Python Using Pyrogram.
 </h3>
 
 <p align="center">
@@ -11,17 +11,13 @@
     <a href="https://GitHub.com/TheHamkerCat"> <img src="http://ForTheBadge.com/images/badges/built-with-love.svg" alt="built-with-love"></a>
 </p>
 
-<p align="center">
-    <img src="https://img.shields.io/github/license/thehamkercat/WilliamButcherBot?style=for-the-badge&logo=appveyor" alt="LICENSE">
-    <img src="https://img.shields.io/github/contributors/thehamkercat/WilliamButcherBot?style=for-the-badge&logo=appveyor" alt="Contributors">
-    <img src="https://img.shields.io/github/repo-size/thehamkercat/WilliamButcherBot?style=for-the-badge&logo=appveyor" alt="Repository Size">
-</p>
+
 
 <p align="center">
     <img src="https://img.shields.io/badge/python-3.9-green?style=for-the-badge&logo=appveyor" alt="Python Version">
-    <img src="https://img.shields.io/github/issues/thehamkercat/WilliamButcherBot?style=for-the-badge&logo=appveyor" alt="Issues">
-    <img src="https://img.shields.io/github/forks/thehamkercat/WilliamButcherBot?style=for-the-badge&logo=appveyor" alt="Forks">
-    <img src="https://img.shields.io/github/stars/thehamkercat/WilliamButcherBot?style=for-the-badge&logo=appveyor" alt="Stars">
+    <img src="https://img.shields.io/github/issues/mearnin/SuperAsunaRoBot?style=for-the-badge&logo=appveyor" alt="Issues">
+    <img src="https://img.shields.io/github/forks/mearnin/SuperAsunaRoBot?style=for-the-badge&logo=appveyor" alt="Forks">
+    <img src="https://img.shields.io/github/stars/mearnin/SuperAsunaRoBot?style=for-the-badge&logo=appveyor" alt="Stars">
 </p>
 
 <h3 align="center"> 
@@ -30,8 +26,8 @@
 
 <p align="center">
     A Support Group and ready-to-use running instance of this bot can be found on Telegram <br>
-    <a href="https://t.me/WilliamButcherBot"> WilliamButcherBot </a> | 
-    <a href="https://t.me/wbbsupport"> WbbSupport </a>
+    <a href="https://t.me/SuperAsunaRoBot"> SuperAsunaRoBot </a> | 
+    <a href="https://t.me/superasunarobotsupport"> WbbSupport </a>
 </p>
 
 <h2 align="center"> 
@@ -50,10 +46,10 @@
 </h2>
 
 ```console
-thehamkercat@arch:~$ git clone https://github.com/thehamkercat/WilliamButcherBot
-thehamkercat@arch:~$ cd WilliamButcherBot
-thehamkercat@arch:~$ pip3 install -U -r requirements.txt
-thehamkercat@arch:~$ cp sample_config.py config.py
+$ git clone https://github.com/mearnin/SuperAsunaRoBot
+$ cd WilliamButcherBot
+$ pip3 install -U -r requirements.txt
+$ cp sample_config.py config.py
 ```
  
 <h3 align="center"> 
@@ -65,7 +61,7 @@ thehamkercat@arch:~$ cp sample_config.py config.py
 </h2>
 
 ```console
-thehamkercat@arch:~$ python3 -m wbb
+$ python3 -m wbb
 ```
 
 <h1 align="center"> 
@@ -77,34 +73,26 @@ thehamkercat@arch:~$ python3 -m wbb
 </h3>
 
 ```console
-thehamkercat@arch:~$ git clone https://github.com/thehamkercat/WilliamButcherBot
-thehamkercat@arch:~$ cd WilliamButcherBot
-thehamkercat@arch:~$ pip3 install pyrogram TgCrypto
-thehamkercat@arch:~$ python3 str_gen.py
+$ git clone https://github.com/mearnin/SuperAsunaRoBot
+$ cd SuperAsunaRoBot
+$ pip3 install pyrogram TgCrypto
+$ python3 str_gen.py
 ```
 
 <p align="center">
-    <a href="https://heroku.com/deploy?template=https://github.com/sathaaaaaa/WilliamButcherBot"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
-    <a href="https://railway.app/new/template?template=https://github.com/sathaaaaaa/WilliamButcherBot/tree/dev&envs=API_HASH,API_ID,ARQ_API_KEY,ARQ_API_URL,BOT_TOKEN,FERNET_ENCRYPTION_KEY,GBAN_LOG_GROUP_ID,LOG_GROUP_ID,LOG_MENTIONS,MESSAGE_DUMP_CHAT,MONGO_DB_URI,PM_PERMIT,RSS_DELAY,SESSION_STRING,SUDO_USERS_ID,USERBOT_PREFIX,WELCOME_DELAY_KICK_SEC"> <img src="https://railway.app/button.svg" alt="Deploy"></a>
+    <a href="https://heroku.com/deploy?template=https://github.com/mearnin/SuperAsunaRoBot"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
+    <a href="https://railway.app/new/template?template=https://github.com/mearnin/SuperAsunaRoBot/tree/dev&envs=API_HASH,API_ID,ARQ_API_KEY,ARQ_API_URL,BOT_TOKEN,FERNET_ENCRYPTION_KEY,GBAN_LOG_GROUP_ID,LOG_GROUP_ID,LOG_MENTIONS,MESSAGE_DUMP_CHAT,MONGO_DB_URI,PM_PERMIT,RSS_DELAY,SESSION_STRING,SUDO_USERS_ID,USERBOT_PREFIX,WELCOME_DELAY_KICK_SEC"> <img src="https://railway.app/button.svg" alt="Deploy"></a>
 </p>
 
-<h1 align="center"> 
-   ⇝ Docker ⇜
-</h1>
 
-```console
-thehamkercat@arch:~$ git clone https://github.com/thehamkercat/WilliamButcherBot
-thehamkercat@arch:~$ cd WilliamButcherBot
-thehamkercat@arch:~$ cp sample_config.env config.env
-```
 
 <h3 align="center"> 
     Edit <b> config.env </b> with your own values
 </h3>
 
 ```console
-thehamkercat@arch:~$ sudo docker build . -t wbb
-thehamkercat@arch:~$ sudo docker run wbb
+$ sudo docker build . -t wbb
+$ sudo docker run wbb
 ```
 
 <h2 align="center"> 
@@ -135,3 +123,13 @@ async def some_function(_, message):
 <h3 align="center"> 
    And put that file in wbb/modules/, restart and test your bot.
 </h3>
+
+<h2 align="center">
+Special Credits ❤️
+</h2>
+<p>
+💡 <a href="https://github.com/thehamkercat> The Hamcker Cat </a>
+💡 <a href="https://github.com/DevsExpo> Friday Userbot </a>
+
+
+
