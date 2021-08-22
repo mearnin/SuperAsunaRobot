@@ -18,7 +18,7 @@ async def wink_command(_, message):
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
     await _.send_video(message.chat.id, image_s)
-    await message.delete()
+    await message.reply()
     
 @app.on_message(filters.command("hug"))
 async def hug_command(_, message):
@@ -26,7 +26,7 @@ async def hug_command(_, message):
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
     await _.send_video(message.chat.id, image_s)
-    await message.delete()
+    await message.reply()
    
    
 @app.on_message(filters.command("pat"))
@@ -35,7 +35,7 @@ async def pat_command(_, message):
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
     await _.send_video(message.chat.id, image_s)
-    await message.delete()
+    await message.reply()
         
 @app.on_message(filters.command("pikachu"))
 async def pikachu_command(_, message):
@@ -49,4 +49,4 @@ async def pikachu_command(_, message):
     if image_s.endswith(".jpg"):
        await _.send_photo(message.chat.id, image_s)
        return
-    await message.delete()
+    await message.reply()
