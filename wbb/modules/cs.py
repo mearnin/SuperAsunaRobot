@@ -10,7 +10,7 @@ _HELP_ = """To get the live cricket livescores
 haha"""
 
 
-@app.on_message(filter.command("cs"))
+@app.on_message(filters.command("cs"))
 async def cs_command(_, message):
     score_page = "http://static.cricinfo.com/rss/livescores.xml"
     async with aiohttp.ClientSession() as session:
