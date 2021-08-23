@@ -174,11 +174,11 @@ async def help_command(_, message):
             ],
         ]
     )
+    await message.reply_sticker(random.choice(STICKERS))
     await message.reply(
         f"Hey there! My name is {BOT_NAME}. I can manage your group with lots of useful features, feel free to add me to your group.",
         reply_markup=keyboard,
     )
-    await message.reply_sticker(random.choice(STICKERS))
 
 async def help_parser(name, keyboard=None):
     if not keyboard:
