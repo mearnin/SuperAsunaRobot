@@ -24,6 +24,7 @@ SOFTWARE.
 import asyncio
 import importlib
 import re
+import random
 
 import uvloop
 from pyrogram import filters, idle
@@ -103,6 +104,17 @@ async def start_bot():
     print("[INFO]: STOPPING BOT AND CLOSING AIOHTTP SESSION")
     await aiohttpsession.close()
 
+STICKERS = (
+"CAACAgQAAxkBAAECys9hIxDBgtkOnESKOKOsS0rX0nKHsAACNAADwl2NATO3EXnkqJg6IAQ"
+"CAACAgQAAxkBAAECytFhIxDIDvOIIubV5ooaPY0JrXRsKAACPgADwl2NAXFsVVWh09miIAQ"
+"CAACAgQAAxkBAAECytNhIxDSuPUvJRymeD0Gf47vfU-IIAACQQADwl2NAU08h6jyb4mnIAQ"
+"CAACAgQAAxkBAAECytVhIxDqVwvntWlg1g31yIAN7rjSrQACJAADwl2NAf1IRVO0WW2IIAQ"
+"CAACAgQAAxkBAAECytdhIxD5R51Fznf8Vob0XZxqNEqL-gACNQADwl2NAYSXMcKu6v8EIAQ"
+"CAACAgQAAxkBAAECytlhIxEBbdvu46j1eTCYePXz8LTHFAACQAADwl2NARDIwwp0ZD0GIAQ"
+"CAACAgQAAxkBAAECytthIxEchMyljgeObm2x8FGOHuWTfgACHgADwl2NAVIov3zrTh1TIAQ"
+)
+
+
 
 @app.on_message(filters.command(["help", "start"]))
 async def help_command(_, message):
@@ -166,7 +178,7 @@ async def help_command(_, message):
         f"Hey there! My name is {BOT_NAME}. I can manage your group with lots of useful features, feel free to add me to your group.",
         reply_markup=keyboard,
     )
-
+    await message.reply_sticker(random.choice(STICKERS))
 
 async def help_parser(name, keyboard=None):
     if not keyboard:
