@@ -24,7 +24,7 @@ SOFTWARE.
 import asyncio
 
 from pyrogram import filters
-from pyrogram.types import CallbackQuery, ChatPermissions, Message
+from pyrogram.types import CallbackQuery, ChatPermissions, Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 from wbb import BOT_ID, SUDOERS, app
 from wbb.core.decorators.errors import capture_err
@@ -239,6 +239,7 @@ async def banFunc(_, message: Message):
         f"**Banned User:** {mention}\n"
         f"**Banned By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
+    
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
     if message.command[0] == "tban":
@@ -264,6 +265,24 @@ async def banFunc(_, message: Message):
         msg += f"**Reason:** {reason}"
     await message.chat.kick_member(user_id)
     await message.reply_text(msg)
+    await message.reply(
+        reply_markup=keyboard,
+        keyboard = InlineKeyboardMarkup(
+        [
+             [  InlineKeyboardButton(
+                    text="Unban(Admins Only)",
+                    callback_data="unban_callback",
+                ),
+             ]
+        ]
+    ))
+@app.on_callback_query(filters.regex("unban_callback"))
+@adminsOnly("can_restrict_members")
+async def unban_callbacc(_, CallbackQuery):
+    await message.chat.unban_member(user)
+    text = f"""Unbanned!!"""
+    await app.answer_callback_query(CallbackQuery.id, text, show_alert=True
+)
 
 
 # Unban members
