@@ -265,7 +265,7 @@ async def banFunc(_, message: Message):
         msg += f"**Reason:** {reason}"
     await message.chat.kick_member(user_id)
     await message.reply_text(msg)
-  keyboard = InlineKeyboardMarkup(
+       keyboard = InlineKeyboardMarkup(
         [
              [  InlineKeyboardButton(
                     text="Unban(Admins Only)",
@@ -273,7 +273,7 @@ async def banFunc(_, message: Message):
                 ),
              ]
         ]
-    )
+       )
     await message.reply(
         reply_markup=keyboard)
     
