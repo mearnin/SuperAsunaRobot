@@ -274,8 +274,7 @@ async def banFunc(_, message: Message):
                ]
           ]
        )
-    await message.reply(
-        reply_markup=keyboard)
+    await message.reply("Admins! If this is wrong, click here👇.", reply_markup=keyboard)
     
 @app.on_callback_query(filters.regex("unban_callback"))
 @adminsOnly("can_restrict_members")
