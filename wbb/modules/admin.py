@@ -235,7 +235,7 @@ async def banFunc(_, message: Message):
             "I can't ban an admin, You know the rules, so do i."
         )
     mention = (await app.get_users(user_id)).mention
-    keyboard = ikb({"🚨   Unban(Admins Only)  🚨": f"unban_{user}"})
+    keyboard = ikb({"🚨   Unban(Admins Only)  🚨": f"unban_{user_id}"})
     msg = (
         f"**Banned User:** {mention}\n"
         f"**Banned By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
@@ -266,24 +266,6 @@ async def banFunc(_, message: Message):
         msg += f"**Reason:** {reason}"
     await message.chat.kick_member(user_id)
     await message.reply_text(msg, reply_markup=keyboard)
-    keyboard = InlineKeyboardMarkup(
-          [
-               [     InlineKeyboardButton(
-                        text="Unban(Admins Only)",
-                        callback_data="unban_callback",
-                     )
-               ]
-          ]
-       )
-    await message.reply("Admins! If this is wrong, click here👇.", reply_markup=keyboard)
-    
-@app.on_callback_query(filters.regex("unban_callback"))
-@adminsOnly("can_restrict_members")
-async def unban_callbacc(_, CallbackQuery):
-    await message.chat.unban_member(user)
-    text = f"""Unbanned!!"""
-    await app.answer_callback_query(CallbackQuery.id, text, show_alert=True
-)
 
 
 # Unban members
