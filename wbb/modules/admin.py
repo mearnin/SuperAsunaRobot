@@ -275,7 +275,7 @@ async def banFunc(_, message: Message):
                 ),
              ]
         ]
-    ))
+    )
 @app.on_callback_query(filters.regex("unban_callback"))
 @adminsOnly("can_restrict_members")
 async def unban_callbacc(_, CallbackQuery):
