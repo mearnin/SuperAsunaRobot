@@ -265,7 +265,7 @@ async def banFunc(_, message: Message):
     if reason:
         msg += f"**Reason:** {reason}"
     await message.chat.kick_member(user_id)
-    await message.reply_text(msg)
+    await message.reply_text(msg, reply_markup=keyboard)
     keyboard = InlineKeyboardMarkup(
           [
                [     InlineKeyboardButton(
