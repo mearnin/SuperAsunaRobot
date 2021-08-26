@@ -659,7 +659,7 @@ async def report_user(_, message):
 
 async def adminlist(chat_id: int):
     return [
-         member.user.first_name
+         member.user.id
          async for member in app.iter_chat_members(
              chat_id, filter="administrators"
          )
@@ -668,7 +668,7 @@ async def adminlist(chat_id: int):
 
 async def botlist(chat_id: int):
     return [
-         member.user.first_name
+         member.user.id
          async for member in app.iter_chat_members(
              chat_id, filter="bots"
          )
