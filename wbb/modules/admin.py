@@ -684,4 +684,5 @@ async def staff_command(_, message):
 
 🤖 Bots:-
 {bots}"""
-   await message.reply(msg)
+   await message.reply_text(msg)
+
