@@ -677,6 +677,7 @@ bot_id = botlist(chat_id)
 
 @app.on_message(filters.command("staff"))
 async def staff_command(_, message):
+    chat_id = message.chat.id
     admins = (await app.get_users(admin_id)).mention
     bots = (await app.get_users(bot_id)).mention
     msg = f"""
