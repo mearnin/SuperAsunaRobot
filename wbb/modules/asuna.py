@@ -15,12 +15,12 @@ REPLY = (
 "Don't get fun with my name!!! I don't like it🤬",
 "Don't forget to recommend me to your friends❤️😎")
 
-@app.on_message(filters.text("m"))
+@app.on_message(filters.text('m', "Asuna"))
 async def Asuna(_, message):
     if message.chat.type != "private":
       await message.reply_text(random.choice(REPLY))
 
-@app.on_message(filters.text("m"))
+@app.on_message(filters.text('m', "asuna"))
 async def asuna(_, message):
     if message.chat.type != "private":
       await message.reply_text(random.choice(REPLY))
