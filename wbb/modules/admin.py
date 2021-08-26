@@ -665,8 +665,7 @@ async def staff_command(_, message):
              ):
                a = member.user.first_name
                msg = (
-                   f"**Admins in this chat**
-                   {a}"
+                   f"**Admins in this chat:** {a}\n"
                )
               
                 await message.reply(msg)
