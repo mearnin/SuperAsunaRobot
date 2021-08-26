@@ -56,8 +56,8 @@ __HELP__ = """/ban - Ban A User
 /tmute - Mute A User For Specific Time
 /unmute - Unmute A User
 /ban_ghosts - Ban Deleted Accounts
-/report | @admins - Report A Message To Admins."""
-
+/report | @admins - Report A Message To Admins.
+/staff - To get the list of admins and the list of bots in the group."""
 
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
@@ -654,3 +654,34 @@ async def report_user(_, message):
     for admin in list_of_admins:
         text += f"[\u2063](tg://user?id={admin})"
     await message.reply_to_message.reply_text(text)
+
+# staff command
+
+async def adminlist(chat_id: int):
+    return [
+         member.user.first_name
+         async for member in app.iter_chat_members(
+             chat_id, filter="administrators"
+         )
+    ]
+
+
+async def botlist(chat_id: int):
+    return [
+         member.user.first_name
+         async for member in app.iter_chat_members(
+             chat_id, filter="bots"
+         )
+    ]
+
+@app.on_message(filters.command("staff")) & ~filters.edited & ~filters.private
+async def staff_command(_, message):
+    admins=(await adminlist.member.user.first_name()).mention
+    bots=(await botlist.member.user.first_name()).mention
+    msg=f"""
+🤵 Administrators:-
+{admins}
+
+🤖 Bots:-
+{bots}"""
+   await message.reply(msg)
