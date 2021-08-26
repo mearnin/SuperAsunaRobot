@@ -656,7 +656,7 @@ async def report_user(_, message):
     await message.reply_to_message.reply_text(text)
 
 # staff command
-
+chat_id = message.chat.id
 async def adminlist(chat_id: int):
     return [
          member.user.id
