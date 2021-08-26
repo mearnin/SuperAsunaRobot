@@ -664,7 +664,7 @@ async def adminlist(chat_id: int):
              chat_id, filter="administrators"
          )
     ]
-admin_id = adminlist()
+admin_id = adminlist(chat_id)
 
 async def botlist(chat_id: int):
     return [
@@ -673,7 +673,7 @@ async def botlist(chat_id: int):
              chat_id, filter="bots"
          )
     ]
-bot_id = botlist()
+bot_id = botlist(chat_id)
 
 @app.on_message(filters.command("staff"))
 async def staff_command(_, message):
