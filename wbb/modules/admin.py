@@ -664,4 +664,4 @@ async def staff_command(_, message):
              async for member in app.iter_chat_members(chat_id, filter="administrators"
              ):
               a = member.user.first_name
-              await message.reply("Admins in this chat:-\n", a)
+              await message.reply("Admins in this chat:-", a)
