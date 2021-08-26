@@ -656,7 +656,7 @@ async def report_user(_, message):
     await message.reply_to_message.reply_text(text)
 
 # staff command
-chat_id = message.chat.id
+
 async def adminlist(chat_id: int):
     return [
          member.user.id
@@ -664,7 +664,7 @@ async def adminlist(chat_id: int):
              chat_id, filter="administrators"
          )
     ]
-admin_id = adminlist(chat_id)
+
 
 async def botlist(chat_id: int):
     return [
@@ -673,11 +673,13 @@ async def botlist(chat_id: int):
              chat_id, filter="bots"
          )
     ]
-bot_id = botlist(chat_id)
+
 
 @app.on_message(filters.command("staff"))
 async def staff_command(_, message):
     chat_id = message.chat.id
+    admin_id = adminlist(chat_id)
+    bot_id = botlist(chat_id)
     admins = (await app.get_users(admin_id)).mention
     bots = (await app.get_users(bot_id)).mention
     msg = f"""
