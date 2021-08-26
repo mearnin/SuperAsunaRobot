@@ -25,7 +25,7 @@ async def asuna(_, message):
     if message.chat.type != "private":
       await message.reply_text(random.choice(REPLY))
 
-@app.on_message(filters.text("AsunaRobot"))
+@app.on_message(filters.text('m', "AsunaRobot"))
 async def AsunaRobot(_, message):
     if message.chat.type != "private":
       await message.reply_text(random.choice(REPLY))
