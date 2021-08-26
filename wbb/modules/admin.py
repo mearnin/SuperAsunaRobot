@@ -667,4 +667,4 @@ async def staff_command(_, message):
                   f"**Admins in this chat:** {member.user.first_name}\n"
               )
               
-              await message.reply(msg)
+              await message.edit_or_reply(msg)
