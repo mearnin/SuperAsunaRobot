@@ -657,26 +657,21 @@ async def report_user(_, message):
 
 # staff command
 
-
-
 cofounders = []
 adminonly = []
-chat_id = message.chat.id
-kadmins = app.get_chat_members(chat_id, filter="administrators")
-if kadmins.can_add_new_admins:
-    cofounders.append(member.user.first_name)
-if not kadmins.can_add_new_admins:
-    adminonly.append(member.user.first_name)
-
-
 
 @app.on_message(filters.command("staff"))
 async def staff_command(_, message):
     chat_id = message.chat.id
+    kadmins = app.get_chat_members(chat_id, filter="administrators")
+    if kadmins.can_add_new_admins:
+        cofounders.append(member.user.first_name)
+    if not kadmins.can_add_new_admins:
+        adminonly.append(member.user.first_name)
     msg = f"""
 **Cofounders**:
-{admin_permissions.cofounders}
+{cofounders}
 
 **Admins**:
-{admin_permissions.adminonly}"""
+{adminonly}"""
     await message.reply(msg)
