@@ -663,7 +663,7 @@ adminonly = []
 @app.on_message(filters.command("staff"))
 async def staff_command(_, message):
     chat_id = message.chat.id
-    kadmins = app.get_chat_members(chat_id, filter="administrators")
+    kadmins = await app.get_chat_members(chat_id, filter="administrators")
     if kadmins.can_promote_members:
         cofounders.append(member.user.first_name)
     if not kadmins.can_promote_members:
