@@ -677,8 +677,8 @@ async def staff_command(_, message):
     chat_id = message.chat.id
     msg = f"""
 **Cofounders**:
-{cofounders}
+{cofounders.member.user.first_name}
 
 **Admins**:
-{adminonly}"""
+{adminonly.member.user.first_name}"""
     await message.reply(msg)
