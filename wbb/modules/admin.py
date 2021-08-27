@@ -660,10 +660,8 @@ async def report_user(_, message):
 cofounders=[]
 adminonly=[]
 async def admin_permissions(chat_id: int):
-    try:
-        kadmins = await app.get_chat_members(chat_id, filter="administrators")
-    except Exception:
-        return []
+    kadmins = await app.get_chat_members(chat_id, filter="administrators")
+
     if kadmins.can_add_new_admins:
         cofounders.append(member.user.first_name)
     if not kadmins.can_add_new_admins:
