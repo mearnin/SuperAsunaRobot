@@ -657,10 +657,9 @@ async def report_user(_, message):
 
 # staff command
 
-
+cofounders=[]
+adminonly=[]
 async def admin_permissions(chat_id: int):
-    cofounders=[]
-    adminonly=[]
     try:
         kadmins = await app.get_chat_members(chat_id, filter="administrators")
     except Exception:
