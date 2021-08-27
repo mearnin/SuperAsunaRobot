@@ -661,6 +661,7 @@ async def report_user(_, message):
 
 cofounders = []
 adminonly = []
+chat_id = message.chat.id
 kadmins = app.get_chat_members(chat_id, filter="administrators")
 if kadmins.can_add_new_admins:
     cofounders.append(member.user.first_name)
