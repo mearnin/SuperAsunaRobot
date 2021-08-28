@@ -671,7 +671,7 @@ async def staff_command(_, message):
     text += "\nAdmins:"
     deleted_admins = []
     normal_admins = []
-    if name = "☠️ Deleted Account":
+    if name == "☠️ Deleted Account":
         deleted_admins.append(name)
     else:
         normal_admins.append(name)
