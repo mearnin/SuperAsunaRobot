@@ -657,21 +657,27 @@ async def report_user(_, message):
 
 # staff command
 
-cofounders = []
-adminonly = []
-
 @app.on_message(filters.command("staff"))
 async def staff_command(_, message):
     chat_id = message.chat.id
-    member = await app.get_chat_members(chat_id, filter="administrators")
-    if member.can_promote_members:
-        cofounders.append(member.user.first_name)
-    if not member.can_promote_members:
-        adminonly.append(member.user.first_name)
-    msg = f"""
-**Cofounders**:
-{cofounders}
+    admins = app.get_chat_members(chat_id, filter="administrators")
+    text = "Admins in this chat:"
+    for admin in admins:
+        first_name = admin.member.user.first_name
+        if first_name == "":
+            name = "☠️ Deleted Account"
+        else:
+            name = "{}"
+    text += "\nAdmins:"
+    deleted_admins = []
+    normal_admins = []
+    if name = "☠️ Deleted Account":
+        deleted_admins.append(name)
+    else:
+        normal_admins.append(name)
+    for admin in normal_admins:
+        text += "\n¥{}"
+    for admin in deleted_admins:
+        text += "\n¥Deleted Account"
+    await message.reply(text)
 
-**Admins**:
-{adminonly}"""
-    await message.reply(msg)
