@@ -669,6 +669,5 @@ async def staff_command(_, message):
     chat_id = message.chat.id
     staff_list = staff(chat_id)
     text = f"**Admins in this chat:**"
-    for admins in staff_list:
-        text += f"\n🙋{admins}"
+    text += f"\n🙋{admins}"
     await message.reply(text)
