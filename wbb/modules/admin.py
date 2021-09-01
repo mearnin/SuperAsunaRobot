@@ -661,7 +661,7 @@ async def report_user(_, message):
 async def staff(chat_id):
     all_admins = []
     async for member in app.iter_chat_members(chat_id, filter="administrators"):
-        text += f"\n🙋{member.user.first_name}"
+        text += f"\n🙋{member.user.id}"
     return text
 
 
