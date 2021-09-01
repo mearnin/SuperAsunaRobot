@@ -657,27 +657,18 @@ async def report_user(_, message):
 
 # staff command
 
+
+async def staff(chat_id):
+    app.get_chat_members(chat_id, filter="administrators")
+    all_admins = member.user.first_name
+    return all_admins
+
+
 @app.on_message(filters.command("staff"))
 async def staff_command(_, message):
     chat_id = message.chat.id
-    admins = app.get_chat_members(chat_id, filter="administrators")
-    text = "Admins in this chat:"
-    for admin in admins:
-        first_name = admin.member.user.first_name
-        if first_name == "":
-            name = "☠️ Deleted Account"
-        else:
-            name = "{}"
-    text += "\nAdmins:"
-    deleted_admins = []
-    normal_admins = []
-    if name == "☠️ Deleted Account":
-        deleted_admins.append(name)
-    else:
-        normal_admins.append(name)
-    for admin in normal_admins:
-        text += "\n¥{}"
-    for admin in deleted_admins:
-        text += "\n¥Deleted Account"
+    staff_list = staff(chat_id)
+    text = f"**Admins in this chat:**"
+    for admins in staff_list:
+        text += f"\n🙋{admins}"
     await message.reply(text)
-
