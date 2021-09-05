@@ -7,7 +7,7 @@ from wbb import app
                                
 @app.on_message(filters.command("hp"))
 async def hp_command(_, message):
-    text = message.split.text(None, 1)[1]
+    text = message.text.split(None, 1)[1]
     m = await message.reply_text("```Searching...```")
     page = requests.get("https://harrypotter.fandom.com/wiki/{text}")
     soup = bs4.BeautifulSoup(page.content, 'lxml', from_encoding='utf-8')
