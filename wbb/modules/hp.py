@@ -12,11 +12,11 @@ async def hp_command(_, message):
     page = requests.get("https://harrypotter.fandom.com/wiki/{text}")
     soup = bs4.BeautifulSoup(page.content, 'lxml', from_encoding='utf-8')
 
-    effects = soup.findAll("div", "Effects")
-    side_effects = soup.findAll("div", "Side Effects")
-    characteris = soup.findAll("div", "Characteristics")
-    time = soup.findAll("div", "Brewing Time")
-    ing = soup.findAll("div", "Ingredients")
+    effects = soup.findAll("div", "effect")
+    side_effects = soup.findAll("div", "side-effects")
+    characteris = soup.findAll("div", "characteristics")
+    time = soup.findAll("div", "time")
+    ing = soup.findAll("div", "ingredients")
     details = f"**{text}√**\n\n"
     details += f"Effects : {effects}\n"
     details += f"Side Effects : {side_effects}\n"
