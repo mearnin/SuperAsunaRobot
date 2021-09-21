@@ -7,7 +7,7 @@ import subprocess
 from asyncio import sleep
 from pyrogram import filters
 from pyrogram.types import Message
-from config import AUDIO_CALL, VIDEO_CALL
+from sample_config import AUDIO_CALL, VIDEO_CALL
 from plugins.video import ydl, group_call
 from helpers.decorators import authorized_users_only, sudo_users_only
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
