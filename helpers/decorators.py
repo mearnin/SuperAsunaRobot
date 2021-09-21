@@ -35,7 +35,7 @@ def errors(func: Callable) -> Callable:
 
 def authorized_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in SUDO_USERS:
+        if message.from_user.id in SUDO_USERS_ID:
             return await func(client, message)
 
         administrators = await get_administrators(message.chat)
@@ -49,7 +49,7 @@ def authorized_users_only(func: Callable) -> Callable:
 
 def sudo_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in SUDO_USERS:
+        if message.from_user.id in SUDO_USERS_ID:
             return await func(client, message)
 
     return decorator
