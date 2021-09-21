@@ -13,7 +13,7 @@ from helpers.decorators import authorized_users_only, sudo_users_only
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from wbb import app
 
-USERNAME = SuperAsunaRoBot
+USERNAME = "SuperAsunaRoBot"
 @app.on_message(filters.command(["play", f"play@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def play(_, m: Message):
