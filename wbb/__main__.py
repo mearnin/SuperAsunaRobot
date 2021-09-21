@@ -177,42 +177,16 @@ async def help_command(_, message):
                 ],
             ]
         )
-        await message.reply(
+        return await message.reply(
             "Pm Me For More Details.", reply_markup=keyboard
         )
-        return
-    keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    text="Commands ❓", callback_data="bot_commands"
-                ),
-                InlineKeyboardButton(
-                    text="Repo 🛠",
-                    url="https://github.com/mearnin/usergecustom",
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    text="System Stats 🖥",
-                    callback_data="stats_callback",
-                ),
-                InlineKeyboardButton(
-                    text="Support 👨", url="https://t.me/GRAPEEER"
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    text="Add Me To Your Group 🎉",
-                    url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
-                )
-            ],
-        ]
-    )
-    await message.reply_sticker(random.choice(STICKERS))
-    await message.reply(
-        f"Hey there! My name is {BOT_NAME}. I can manage your group with lots of useful features, feel free to add me to your group.",
-        reply_markup=keyboard,
+    if len(message.text.split()) > 1:
+        start_what = (message.text.split(None, 1)[1]).lower()
+        if start_what == "mkdwn_help":
+            return await message.reply(MARKDOWN, parse_mode="html")
+    return await message.reply(
+        home_text_pm,
+        reply_markup=home_keyboard_pm,
     )
 
 async def help_parser(name, keyboard=None):
