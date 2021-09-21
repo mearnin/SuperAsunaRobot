@@ -33,6 +33,7 @@ from youtubesearchpython import VideosSearch
 from helpers.decorators import authorized_users_only
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from wbb import app
+from wbb import app2
 
 USERNAME = "SuperAsunaRobot"
 ydl_opts = {
@@ -41,7 +42,7 @@ ydl_opts = {
         "nocheckcertificate": True,
 }
 ydl = YoutubeDL(ydl_opts)
-group_call = GroupCallFactory(User, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM).get_group_call()
+group_call = GroupCallFactory(app2, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM).get_group_call()
 
 
 @app.on_message(filters.command(["stream", f"stream@{USERNAME}"]) & filters.group & ~filters.edited)
