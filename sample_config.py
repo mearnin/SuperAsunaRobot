@@ -17,6 +17,8 @@ if HEROKU:
     SUDO_USERS_ID = list(
         int(x) for x in environ.get("SUDO_USERS_ID", "").split()
     )
+    AUDIO_CALL = {}
+    VIDEO_CALL = {}
     LOG_GROUP_ID = int(environ.get("LOG_GROUP_ID", None))
     GBAN_LOG_GROUP_ID = int(environ.get("GBAN_LOG_GROUP_ID", None))
     MESSAGE_DUMP_CHAT = int(environ.get("MESSAGE_DUMP_CHAT", None))
@@ -51,3 +53,5 @@ else:
     LOG_MENTIONS = True
     RSS_DELAY = 300  # In seconds
     PM_PERMIT = True
+    AUDIO_CALL = {}
+    VIDEO_CALL = {}
