@@ -48,7 +48,7 @@ group_call = GroupCallFactory(User, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRA
 
 @app.on_message(filters.command(["stream", f"stream@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
-async def stream(client, m: Message):
+async def stream(_, m: Message):
     msg = await m.reply_text("🔄 `Processing ...`")
     chat_id = m.chat.id
     media = m.reply_to_message
@@ -191,7 +191,7 @@ async def resume(_, m: Message):
 
 @app.on_message(filters.command(["endstream", f"endstream@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
-async def endstream(client, m: Message):
+async def endstream(_, m: Message):
     msg = await m.reply_text("🔄 `Processing ...`")
     chat_id = m.chat.id
 
