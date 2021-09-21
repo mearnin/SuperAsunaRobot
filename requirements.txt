@@ -23,3 +23,8 @@ wget
 python-dotenv
 feedparser
 pyromod
+ffmpeg-python
+python-dotenv
+youtube_search_python
+pytgcalls==3.0.0.dev19
+git+https://github.com/pyrogram/pyrogram@master
