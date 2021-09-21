@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 from typing import Callable
 from pyrogram import Client
-from config import SUDO_USERS
+from sample_config import SUDO_USERS_ID
 from pyrogram.types import Message
 from helpers.admins import get_administrators
 
