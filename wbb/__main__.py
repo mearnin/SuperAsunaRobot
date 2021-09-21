@@ -250,13 +250,7 @@ General command are:
         await query.message.edit(
             text=text,
             reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "back", callback_data="help_back"
-                        )
-                    ]
-                ]
+                [[InlineKeyboardButton("back", callback_data="help_back")]]
             ),
             disable_web_page_preview=True,
         )
