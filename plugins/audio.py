@@ -111,7 +111,7 @@ async def play(_, m: Message):
 
 @app.on_message(filters.command(["restart", f"restart@{USERNAME}"]))
 @sudo_users_only
-async def restart(client, m: Message):
+async def restart(_, m: Message):
     k = await m.reply_text("🔄 `Restarting ...`")
     await sleep(3)
     os.execl(sys.executable, sys.executable, *sys.argv)
