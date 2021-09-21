@@ -24,7 +24,6 @@ import ffmpeg
 import asyncio
 import subprocess
 from asyncio import sleep
-from plugins.nopm import User
 from youtube_dl import YoutubeDL
 from pyrogram import filters
 from pyrogram.types import Message
@@ -190,7 +189,7 @@ async def resume(_, m: Message):
 
 @app.on_message(filters.command(["endstream", f"endstream@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
-async def endstream(client, m: Message):
+async def endstream(_, m: Message):
     msg = await m.reply_text("🔄 `Processing ...`")
     chat_id = m.chat.id
 
