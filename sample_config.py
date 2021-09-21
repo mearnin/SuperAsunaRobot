@@ -26,6 +26,7 @@ if HEROKU:
     WELCOME_DELAY_KICK_SEC = int(
         environ.get("WELCOME_DELAY_KICK_SEC", None)
     )
+    admins = {}
     MONGO_DB_URI = environ.get("MONGO_DB_URI", None)
     ARQ_API_URL = environ.get("ARQ_API_URL", None)
     ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
@@ -33,6 +34,7 @@ if HEROKU:
     RSS_DELAY = int(environ.get("RSS_DELAY", None))
     PM_PERMIT = bool(int(environ.get("PM_PERMIT", None)))
 else:
+    admins = {}
     BOT_TOKEN = "467677575:YZfaakjwd545dfg-N6JStihhuw5gQeZHntc"
     API_ID = 123456
     API_HASH = "dfxcgs5s12hdcxfgdfz"
