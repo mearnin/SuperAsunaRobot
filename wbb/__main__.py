@@ -222,6 +222,7 @@ async def stats_callbacc(_, CallbackQuery):
 
 @app.on_callback_query(filters.regex(r"help_(.*?)"))
 async def help_button(client, query):
+    home_match = re.match(r"help_home\((.+?)\)", query.data)
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
@@ -258,6 +259,13 @@ General command are:
                 ]
             ),
             disable_web_page_preview=True,
+        )
+
+    elif home_match:
+        await app.send_message(
+            query.from_user.id,
+            text=home_text_pm,
+            reply_markup=home_keyboard_pm,
         )
 
     elif prev_match:
