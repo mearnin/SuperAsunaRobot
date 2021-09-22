@@ -162,7 +162,7 @@ async def quickcomm_callbacc(_, CallbackQuery):
     )
     await app.send_message(
         CallbackQuery.message.chat.id,
-        text=text,
+        text=quick_commands,
     )
 
     await CallbackQuery.message.delete()
