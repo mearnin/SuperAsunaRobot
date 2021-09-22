@@ -184,8 +184,9 @@ async def help_command(_, message):
         start_what = (message.text.split(None, 1)[1]).lower()
         if start_what == "mkdwn_help":
             return await message.reply(MARKDOWN, parse_mode="html")
-    return await message.reply(
-        random.choice(STICKERS),
+    return
+    await message.reply_sticker(random.choice(STICKERS)) 
+    await message.reply(
         home_text_pm,
         reply_markup=home_keyboard_pm,
     )
