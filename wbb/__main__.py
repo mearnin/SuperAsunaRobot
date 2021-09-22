@@ -113,17 +113,18 @@ home_keyboard_pm = InlineKeyboardMarkup(
             ),
             InlineKeyboardButton(
                 text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+                url="https://github.com/mearnin/SuperAsunaRoBot",
             ),
         ],
         [
             InlineKeyboardButton(
                 text="System Stats 🖥",
                 callback_data="stats_callback",
-            ),
+            )
+        [
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
-            ),
+                text="Support 👨", url="http://t.me/superasunarobotsupport"
+            )
         ],
         [
             InlineKeyboardButton(
@@ -154,7 +155,7 @@ async def help_command(_, message):
                     ),
                     InlineKeyboardButton(
                         text="Repo 🛠",
-                        url="https://github.com/mearnin/usergecustom",
+                        url="https://github.com/mearnin/SuperAsunaRoBot",
                     ),
                 ],
                 [
