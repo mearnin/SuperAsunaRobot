@@ -142,7 +142,7 @@ home_text_pm = (
     + "add me to your group."
 )
 
-quick_commands = (
+quick_commands = 
     "**Here are the quick commands**
    - /kick - kicks a member (Admins only) [reply to a message / username / user ID]
    - /ban - restrict a member from a chat (Admins only) [reply to a message / username /user ID]
@@ -154,7 +154,7 @@ quick_commands = (
     
     **𝑰𝑴𝑷𝑶𝑹𝑻𝑨𝑵𝑻**
     The above commands will only work if the bot has full admin rights with add new admins permission"
-)
+
 
 
 @app.on_callback_query(filters.regex("quickcomm_callback"))
