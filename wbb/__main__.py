@@ -157,10 +157,15 @@ quick_commands = (
 
 @app.on_callback_query(filters.regex("quickcomm_callback"))
 async def quickcomm_callbacc(_, CallbackQuery):
-    text = quick_commands
-    await app.answer_callback_query(
-        CallbackQuery.id, text, show_alert=True
+    text = await help_parser(
+        CallbackQuery.from_user.mention
     )
+    await app.send_message(
+        CallbackQuery.message.chat.id,
+        text=text,
+    )
+
+    await CallbackQuery.message.delete()
 
 
 
