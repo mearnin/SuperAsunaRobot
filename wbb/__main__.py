@@ -121,6 +121,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
                 text="System Stats 🖥",
                 callback_data="stats_callback",
             )
+        ],
         [
             InlineKeyboardButton(
                 text="Support 👨", url="http://t.me/superasunarobotsupport"
