@@ -156,7 +156,7 @@ quick_commands = (
 
 
 @app.on_callback_query(filters.regex("quickcomm_callback"))
-async def stats_callbacc(_, CallbackQuery):
+async def quickcomm_callbacc(_, CallbackQuery):
     text = quick_commands
     await app.answer_callback_query(
         CallbackQuery.id, text, show_alert=True
