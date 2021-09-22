@@ -10,7 +10,7 @@ __HELP__ = """To tag members in a chat
 
 @app.on_message(filters.command("tagall") & ~filters.edited & ~filters.bot)
 @adminsOnly
-async def tagall(_, message):
+async def tagall(client, message):
     await message.reply("`Processing.....`")
     sh = message.text.split(None, 1)[1]
     if not sh:
