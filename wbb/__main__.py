@@ -144,26 +144,82 @@ home_text_pm = (
 
 quick_commands = """**Here are the quick commands**
    - /kick - kicks a member (Admins only) [reply to a message / username / user ID]
-   - /ban - restrict a member from a chat (Admins only) [reply to a message / username /user ID]
-   - /promote - promote a member (Admins only) [reply to a message /username]
+   - /ban - restrict a member from a chat (Admins only) [reply to a message / username / user ID]
+   - /promote - promote a member (Admins only) [reply to a message / username]
    - /purge - delete a bunch of messages in a chat [reply to a message to mark from where to start]
    - /del - delete a replied message
     
-    🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟
+    🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟
     
     **𝑰𝑴𝑷𝑶𝑹𝑻𝑨𝑵𝑻**
     The above commands will only work if the bot has full admin rights with add new admins permission"""
 
 
+gkeyboard = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        text="Help ❓",
+                        url=f"t.me/{BOT_USERNAME}?start=help",
+                    ),
+                    InlineKeyboardButton(
+                        text="Quick Commands🤖",
+                        callback_data="quickcomm_callback",
+                    ),
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="System Stats 💻",
+                        callback_data="stats_callback",
+                    ),
+                    InlineKeyboardButton(
+                        text="Support 👨", url="t.me/superasunarobotsupport"
+                    ),
+                ],
+            ]
+        )
+
+grouptxt = """PM me for more details"""
+
+@app.on_callback_query(filters.regex("group_back"))
+async def groupback_callbacc(_, CallbackQuery):
+    text, keyboard = await help_parser(
+        CallbackQuery.from_user.mention
+    )
+    await app.send_message(
+        CallbackQuery.message.chat.id,
+        text=grouptxt,
+        reply_markup=gkeyboard,
+    )
+
+    await CallbackQuery.message.delete()
+
+bkeyboard = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        text="Back⬅️",
+                        callback_data="group_back",
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        text="Full Help",
+                        url=f"t.me/{BOT_USERNAME}?start=help",
+                    )
+                ],
+            ]
+)
 
 @app.on_callback_query(filters.regex("quickcomm_callback"))
 async def quickcomm_callbacc(_, CallbackQuery):
-    text = await help_parser(
+    text, keyboard = await help_parser(
         CallbackQuery.from_user.mention
     )
     await app.send_message(
         CallbackQuery.message.chat.id,
         text=quick_commands,
+        reply_markup=bkeyboard
     )
 
     await CallbackQuery.message.delete()
