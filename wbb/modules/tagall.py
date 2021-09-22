@@ -22,5 +22,5 @@ async def tagall(_, message):
     kk = [mentions[i : i + n] for i in range(0, len(mentions), n)]
     for i in kk:
         j = f"<b>{sh}</b> \n{i}"
-        await app.send_message(message.chat.id, j, parse_mode="html")
+        await app.send_message(message.chat.id, j, parse_mode="html",)
 
