@@ -142,6 +142,18 @@ home_text_pm = (
     + "add me to your group."
 )
 
+quick_commands = (
+    f"** Here are the quick commands**"
+    + "/kick - kicks a member (Admins only) [reply to a message / username / user ID]"
+    + "/ban - restrict a member from a chat (Admins only) [reply to a message / username /user ID]"
+    + "/promote - promote a member (Admins only) [reply to a message /username]"
+    + "/purge - delete a bunch of messages in a chat [reply to a message to mark from where to start]"
+    + "/del - delete a replied message"
+    + "🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟"
+    + "**𝑰𝑴𝑷𝑶𝑹𝑻𝑨𝑵𝑻**"
+    + "The above commands will only work if the bot has full admin rights with add new admins permission"
+)
+
 
 
 @app.on_message(filters.command(["help", "start"]))
@@ -155,8 +167,8 @@ async def help_command(_, message):
                         url=f"t.me/{BOT_USERNAME}?start=help",
                     ),
                     InlineKeyboardButton(
-                        text="Repo 🛠",
-                        url="https://github.com/mearnin/SuperAsunaRoBot",
+                        text="Quick Commands🤖",
+                        text=quick_commands,
                     ),
                 ],
                 [
@@ -165,7 +177,7 @@ async def help_command(_, message):
                         callback_data="stats_callback",
                     ),
                     InlineKeyboardButton(
-                        text="Support 👨", url="t.me/GRAPEEER"
+                        text="Support 👨", url="t.me/superasunarobotsupport"
                     ),
                 ],
             ]
