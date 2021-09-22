@@ -155,6 +155,15 @@ quick_commands = (
 )
 
 
+@app.on_callback_query(filters.regex("quickcomm_callback"))
+async def stats_callbacc(_, CallbackQuery):
+    text = quick_commands
+    await app.answer_callback_query(
+        CallbackQuery.id, text, show_alert=True
+    )
+
+
+
 
 @app.on_message(filters.command(["help", "start"]))
 async def help_command(_, message):
@@ -168,7 +177,7 @@ async def help_command(_, message):
                     ),
                     InlineKeyboardButton(
                         text="Quick Commands🤖",
-                        text=quick_commands,
+                        callback_data="quickcomm_callback",
                     ),
                 ],
                 [
