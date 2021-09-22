@@ -143,7 +143,7 @@ home_text_pm = (
 )
 
 quick_commands = (
-    "** Here are the quick commands**
+    "**Here are the quick commands**
    - /kick - kicks a member (Admins only) [reply to a message / username / user ID]
    - /ban - restrict a member from a chat (Admins only) [reply to a message / username /user ID]
    - /promote - promote a member (Admins only) [reply to a message /username]
