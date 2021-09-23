@@ -237,6 +237,7 @@ async def banFunc(_, message: Message):
     mention = (await app.get_users(user_id)).mention
     keyboard = ikb({"🚨   Unban(Admins Only)  🚨": f"unban_{user_id}"})
     msg = (
+        f"**BANNED**\n"
         f"**Banned User:** {mention}\n"
         f"**Banned By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
