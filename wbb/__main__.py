@@ -179,7 +179,7 @@ gkeyboard = InlineKeyboardMarkup(
             ]
         )
 
-grouptxt = """PM me for more details"""
+grouptxt = """PM me for more details👀"""
 
 @app.on_callback_query(filters.regex("group_back"))
 async def groupback_callbacc(_, CallbackQuery):
