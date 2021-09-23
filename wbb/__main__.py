@@ -271,10 +271,10 @@ async def help_parser(name, keyboard=None):
             paginate_modules(0, HELPABLE, "help")
         )
     return (
-        """Hello {first_name}! My name is {bot_name}!
-I'm a group management bot with some useful features.
-You can choose an option below, by clicking a button.
-Also you can ask anything in Support Group.
+        """Hello {first_name}! My name is {bot_name}! Made with ❤️ Just for you 🤣🤣
+I'm an anime themed group management bot with some useful features.
+You can choose an option below, by clicking a button. I think it will be enough for you.
+Also you can ask anything in Support Group.Please lead to @superasunarobotsupport👀
 """.format(
             first_name=name,
             bot_name=BOT_NAME,
