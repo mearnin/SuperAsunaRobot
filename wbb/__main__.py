@@ -192,7 +192,7 @@ async def groupback_callbacc(_, CallbackQuery):
         reply_markup=gkeyboard,
     )
 
-    await CallbackQuery.message.delete()
+    await CallbackQuery.message.edit()
 
 bkeyboard = InlineKeyboardMarkup(
             [
@@ -222,7 +222,7 @@ async def quickcomm_callbacc(_, CallbackQuery):
         reply_markup=bkeyboard
     )
 
-    await CallbackQuery.message.delete()
+    await CallbackQuery.message.edit()
 
 
 
