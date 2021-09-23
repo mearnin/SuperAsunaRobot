@@ -204,7 +204,7 @@ bkeyboard = InlineKeyboardMarkup(
                 ],
                 [
                     InlineKeyboardButton(
-                        text="Full Help",
+                        text="Full Help↗️",
                         url=f"t.me/{BOT_USERNAME}?start=help",
                     )
                 ],
