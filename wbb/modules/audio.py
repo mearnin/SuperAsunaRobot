@@ -13,6 +13,27 @@ from helpers.decorators import authorized_users_only, sudo_users_only
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from wbb import app
 
+
+__MODULE__ = "Video Play"
+__HELP__ = """
+**Voice chat video/audio music player🎸**
+Thanks @AsmSafone for this ❤️
+
+Add @ManuSath to your group and start a video chat then vollia enjoy!!!😃
+**Commands==>**
+🎧Audio play
+
+-/play reply to an audio file or a youtube link or a m3u8 link
+
+📽️Video play
+
+-/stream reply to a video file or a youtube link or a m3u8 link
+-/pause pause video or audio
+-/resume resume play
+-/endstream end streaming audio/ video
+
+𝑵𝒐𝒕𝒆 𝒕𝒉𝒂𝒕 𝒕𝒉𝒊𝒔 𝒔𝒆𝒓𝒗𝒊𝒄𝒆 𝒊𝒔 𝒖𝒏𝒔𝒕𝒂𝒃𝒍𝒆 𝒂𝒏𝒅 𝗰𝗮𝗻 𝗯𝗲 𝘀𝘁𝗼𝗽𝗽𝗲𝗱 𝗮𝘁 𝗮𝗻𝘆 𝘁𝗶𝗺𝗲"""
+
 USERNAME = "SuperAsunaRoBot"
 @app.on_message(filters.command(["play", f"play@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
