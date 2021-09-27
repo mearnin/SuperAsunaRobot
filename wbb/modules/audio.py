@@ -82,7 +82,27 @@ async def play(_, m: Message):
             await group_call.join(chat_id)
             await group_call.start_audio(link, repeat=False)
             AUDIO_CALL[chat_id] = group_call
-            await msg.edit(f"▶️ **Started [Audio Streaming]({query}) In {m.chat.title} !**", disable_web_page_preview=True)
+            await m.reply_photo(
+               photo=thumb, 
+               caption=f"▶️ **Started [Video Streaming]({query}) In {m.chat.title} !**",
+               reply_markup=InlineKeyboardMarkup(
+               [
+                   [
+                       InlineKeyboardButton(
+                          text="⏸",
+                          callback_data="pause_callback",
+                       ),
+                       InlineKeyboardButton(
+                          text="▶️",
+                          callback_data="resume_callback",
+                       ),
+                       InlineKeyboardButton(
+                          text="⏹️",
+                          callback_data="end_callback",
+                       ),
+                   ],
+               ]),
+            )
         except Exception as e:
             await msg.edit(f"❌ **An Error Occoured !** \n\nError: `{e}`")
 
@@ -107,7 +127,26 @@ async def play(_, m: Message):
             await group_call.join(chat_id)
             await group_call.start_audio(audio, repeat=False)
             AUDIO_CALL[chat_id] = group_call
-            await msg.edit(f"▶️ **Started [Audio Streaming](https://t.me/AsmSafone) In {m.chat.title} !**", disable_web_page_preview=True)
+            await m.reply_text( 
+               text=f"▶️ **Started [Video Streaming](https://) In {m.chat.title} !**",
+               reply_markup=InlineKeyboardMarkup(
+               [
+                   [
+                       InlineKeyboardButton(
+                          text="⏸",
+                          callback_data="pause_callback",
+                       ),
+                       InlineKeyboardButton(
+                          text="▶️",
+                          callback_data="resume_callback",
+                       ),
+                       InlineKeyboardButton(
+                          text="⏹️",
+                          callback_data="end_callback",
+                       ),
+                   ],
+               ]),
+            )
         except Exception as e:
             await msg.edit(f"❌ **An Error Occoured !** \n\nError: `{e}`")
 
