@@ -10,7 +10,7 @@ from pyrogram.types import Message
 from sample_config import AUDIO_CALL, VIDEO_CALL
 from wbb.modules.video import ydl, group_call
 from helpers.decorators import authorized_users_only, sudo_users_only
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from wbb import app
 
 
@@ -82,6 +82,7 @@ async def play(_, m: Message):
             await group_call.join(chat_id)
             await group_call.start_audio(link, repeat=False)
             AUDIO_CALL[chat_id] = group_call
+            await msg.delete()
             await m.reply_photo(
                photo=thumb, 
                caption=f"▶️ **Started [Video Streaming]({query}) In {m.chat.title} !**",
@@ -127,6 +128,7 @@ async def play(_, m: Message):
             await group_call.join(chat_id)
             await group_call.start_audio(audio, repeat=False)
             AUDIO_CALL[chat_id] = group_call
+            await msg.delete()
             await m.reply_text( 
                text=f"▶️ **Started [Video Streaming](https://) In {m.chat.title} !**",
                reply_markup=InlineKeyboardMarkup(
