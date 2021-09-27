@@ -45,6 +45,61 @@ ydl = YoutubeDL(ydl_opts)
 group_call = GroupCallFactory(app2, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM).get_group_call()
 
 
+
+@Client.on_callback_query(filters.regex("pause_callback"))
+async def pause_callbacc(client, CallbackQuery):
+    chat_id = CallbackQuery.message.chat.id
+    if chat_id in AUDIO_CALL:
+        text = f"⏸ Paused !"
+        await AUDIO_CALL[chat_id].set_audio_pause(True)
+    elif chat_id in VIDEO_CALL:
+        text = f"⏸ Paused !"
+        await VIDEO_CALL[chat_id].set_video_pause(True)
+    else:
+        text = f"❌ Nothing is Playing !"
+    await Client.answer_callback_query(
+        CallbackQuery.id, text, show_alert=True
+    )
+
+@Client.on_callback_query(filters.regex("resume_callback"))
+async def resume_callbacc(client, CallbackQuery):
+    chat_id = CallbackQuery.message.chat.id
+    if chat_id in AUDIO_CALL:
+        text = f"▶️ Resumed !"
+        await AUDIO_CALL[chat_id].set_audio_pause(False)
+    elif chat_id in VIDEO_CALL:
+        text = f"▶️ Resumed !"
+        await VIDEO_CALL[chat_id].set_video_pause(False)
+    else:
+        text = f"❌ Nothing is Playing !"
+    await Client.answer_callback_query(
+        CallbackQuery.id, text, show_alert=True
+    )
+
+
+@Client.on_callback_query(filters.regex("end_callback"))
+async def end_callbacc(client, CallbackQuery):
+    chat_id = CallbackQuery.message.chat.id
+    if chat_id in AUDIO_CALL:
+        text = f"⏹️ Stopped !"
+        await AUDIO_CALL[chat_id].stop()
+        AUDIO_CALL.pop(chat_id)
+    elif chat_id in VIDEO_CALL:
+        text = f"⏹️ Stopped !"
+        await VIDEO_CALL[chat_id].stop()
+        VIDEO_CALL.pop(chat_id)
+    else:
+        text = f"❌ Nothing is Playing !"
+    await Client.answer_callback_query(
+        CallbackQuery.id, text, show_alert=True
+    )
+    await Client.send_message(
+        chat_id=CallbackQuery.message.chat.id,
+        text=f"✅ **Streaming Stopped & Left The Video Chat !**"
+    )
+    await CallbackQuery.message.delete()
+
+
 @app.on_message(filters.command(["stream", f"stream@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def stream(client, m: Message):
