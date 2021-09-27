@@ -130,7 +130,7 @@ async def play(_, m: Message):
             AUDIO_CALL[chat_id] = group_call
             await msg.delete()
             await m.reply_text( 
-               text=f"▶️ **Started [Video Streaming](https://) In {m.chat.title} !**",
+               text=f"▶️ **Started [Video Streaming](https://t.me/superasunasupport) In {m.chat.title} !**",
                reply_markup=InlineKeyboardMarkup(
                [
                    [
