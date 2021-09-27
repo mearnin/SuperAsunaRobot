@@ -27,7 +27,7 @@ if HEROKU:
         environ.get("WELCOME_DELAY_KICK_SEC", None)
     )
     admins = {}
-    MONGO_DB_URI = environ.get("MONGO_DB_URI", None)
+    MONGO_URL = environ.get("MONGO_URL", None)
     ARQ_API_URL = environ.get("ARQ_API_URL", None)
     ARQ_API_KEY = environ.get("ARQ_API_KEY", None)
     LOG_MENTIONS = bool(int(environ.get("LOG_MENTIONS", None)))
