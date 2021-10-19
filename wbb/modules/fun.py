@@ -17,16 +17,14 @@ async def wink_command(_, message):
     hmm_s = "https://some-random-api.ml/animu/wink"
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
-    await _.send_video(message.chat.id, image_s)
-    await message.reply_text("Here i your wink")
+    await message.reply_video(image_s)
     
 @app.on_message(filters.command("hug"))
 async def hug_command(_, message):
     hmm_s = "https://some-random-api.ml/animu/hug"
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
-    await _.send_video(message.chat.id, image_s)
-    await message.reply_text("Here is your hug")
+    await message.reply_video(image_s)
    
    
 @app.on_message(filters.command("pat"))
@@ -34,8 +32,7 @@ async def pat_command(_, message):
     hmm_s = "https://some-random-api.ml/animu/pat"
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
-    await _.send_video(message.chat.id, image_s)
-    await message.reply_text("Here is your pat")
+    await message.reply_video(image_s)
         
 @app.on_message(filters.command("pikachu"))
 async def pikachu_command(_, message):
@@ -44,9 +41,8 @@ async def pikachu_command(_, message):
     image_s = r["link"]
     await _.send_video(message.chat.id, image_s)
     if image_s.endswith(".png"):
-       await _.send_photo(message.chat.id, image_s)
+       await message.reply_photo(image_s)
        return
     if image_s.endswith(".jpg"):
-       await _.send_photo(message.chat.id, image_s)
+       await message.reply_photo(image_s)
        return
-    await message.reply_text("Here is your pikachu")
